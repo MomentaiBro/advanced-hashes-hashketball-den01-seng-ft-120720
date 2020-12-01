@@ -130,8 +130,9 @@ end
 def num_points_scored(name)
   hash = game_hash
   hash.each do |location, info|
-binding.pry
+# binding.pry
     info.each do |stats, deets|
+  binding.pry
       if deets.include?(name)
         return hash[info][stats][:points]
       end
