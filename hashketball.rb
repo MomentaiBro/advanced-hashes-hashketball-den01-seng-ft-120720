@@ -136,14 +136,3 @@ def num_points_scored
 binding.pry
 end
 end
-
-def shoe_size(player_name)
-game_hash.each do |team_place, team_info|
-  game_hash[team_info][:players].each do |player|
-    binding.pry
-    if player[:players_name] == player_name
-      return players[:shoe]
-    end
-  end
-end
-end
