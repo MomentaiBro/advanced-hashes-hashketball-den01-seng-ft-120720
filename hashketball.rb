@@ -126,7 +126,7 @@ def game_hash
     }
   }
 end
-require "pry"
+
 def player_helper 
   game_hash[:home][:players].merge(game_hash[:away][:players])
 end
