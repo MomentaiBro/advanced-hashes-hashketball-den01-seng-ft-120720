@@ -142,7 +142,7 @@ def get_team_helper(team)
 end
 
 def num_points_scored(player_name)
-  player_helper[:player_name][:points]
+  player_helper[:player_name][:score]
 end
 
 def shoe_size
