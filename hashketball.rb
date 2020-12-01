@@ -131,15 +131,6 @@ def player_helper
   game_hash[:home][:players].merge(game_hash[:away][:players])
 end
 
-def get_team_helper(team)
-  
-  case team 
-  when game_hash[:home][:team_name]
-    game_hash[:home]
-  when game_hash[:away][:team_name]
-    game_hash[:away]
-  end
-end
 
 def num_points_scored(player)
   player_helper[:player_name][:score]
