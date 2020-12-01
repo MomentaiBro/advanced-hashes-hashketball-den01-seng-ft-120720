@@ -141,7 +141,7 @@ def get_team_helper(team)
   end
 end
 
-def num_points_scored(player_name)
+def num_points_scored(player)
   player_helper[:player_name][:score]
 end
 
