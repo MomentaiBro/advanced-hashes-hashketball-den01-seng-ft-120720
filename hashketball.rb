@@ -127,11 +127,6 @@ def game_hash
   }
 end
 
-def all_players
-  game_hash[:home][:players].merge(game_hash[:away][:players])
-  binding.pry
-end
-
 def num_points_scored
   all_players.each do |key, value|
 binding.pry
