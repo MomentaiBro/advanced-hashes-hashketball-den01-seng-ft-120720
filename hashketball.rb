@@ -1,3 +1,4 @@
+require "pry"
 # Write your code below game_hash
 def game_hash
   {
@@ -130,12 +131,19 @@ def player_helper
   game_hash[:home][:player].merge(game_hash[:away][:players])
 end
 
-def get_team_info
-
+def get_team_helper(team)
+  
+  case team 
+  when game_hash[:home][:team_name]
+    game_hash[:home]
+  when game_hash[:away][:team_name]
+    game_hash[:away]
+  end
 end
 
-def num_points_scored(players_name)
-  game_hash
+def num_points_scored(player)
+  player_helper
+  binding.pry
 end
 
 def shoe_size
