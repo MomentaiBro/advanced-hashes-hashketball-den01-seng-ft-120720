@@ -127,9 +127,15 @@ def game_hash
   }
 end
 
-# def all_players
-  # game_hash[:home][:players].merge(game_hash[:away][:players])
-# end
+def all_players
+  game_hash[:home][:players].merge(game_hash[:away][:players])
+end
+
+def num_points_scored
+  all_players.each do |key, value|
+binding.pry
+end
+end
 
 def shoe_size(player_name)
 game_hash.each do |team_place, team_info|
