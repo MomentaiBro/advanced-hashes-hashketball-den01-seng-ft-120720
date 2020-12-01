@@ -126,6 +126,14 @@ def game_hash
   }
 end
 
+def player_helper 
+  game_hash[:home][:player].merge(game_hash[:away][:players])
+end
+
+def get_team_info
+
+end
+
 def num_points_scored(players_name)
   game_hash
 end
