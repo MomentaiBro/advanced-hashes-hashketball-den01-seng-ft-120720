@@ -127,38 +127,38 @@ def game_hash
   }
 end
 
+def players
+game_hash[:home][:players].concat game_hash[:away][:players]
+end
 
-def num_points_scored(player_search)
-  game_hash.each do |team, team_info|
-    team_info[:players].each do |player|
-      if player[:player_name] == player_search
-        return player[:points]
-      end
-    end
+def find_player player_name
+  players.find do |player|
+    player[:player_name] == player_name
   end
 end
 
-def shoe_size(name)
-  game_hash.each do |team, team_info|
-    team_info[:players].each do |player|
-      if player[:player_name] == name
-        return player[:shoe]
-      end
-    end
-  end
+def num_points_scored(players_name)
+  find_player(players_name)[:points]
 end
 
-def team_colors(team_input)
-  if team_input.downcase == "charlotte hornets" 
-    return game_hash[:away][:colors]
-  else return game_hash[:home][:colors]
+def shoe_size(players_name)
+find_player(players_name)[:shoe]
+end
+
+def find_team(team_name)
+  game_hash.values.find do |team|
+    team_name == team[:team_name] 
   end
 end
+# binding.pry 
+
+def team_colors(team_name)
+  find_team(team_name)[:colors]
+end
+# binding.pry 
 
 def team_names
-  game_hash.map do |team, team_info|
-    team_info[:team_name]
-  end
+  find_team
 end
 
 def player_numbers(input)
